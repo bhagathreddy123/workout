@@ -20,7 +20,26 @@ class ExercisesController < ApplicationController
   	end
   end
 
+  def edit
+  end
+
+  def update
+    if @exercise.update(exercise_params)
+      flash[:success] = "Exercise has been updated"
+      redirect_to [current_user, @exercise]
+    else
+      flash.now[:danger] = "Exercise had not been updated"
+      render :edit
+    end
+  end
+
   def show
+  end
+
+  def destroy
+    @exercise.destroy
+    flash[:success] = "Exercise has been deleted"
+    redirect_to user_exercises_path()current_user)
   end
 
   private
