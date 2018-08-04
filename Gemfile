@@ -35,7 +35,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'devise', '~> 4.4', '>= 4.4.3'
 group :development, :test do
   gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
   gem 'guard-rspec', require: false
