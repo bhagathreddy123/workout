@@ -10,10 +10,10 @@ class ExercisesController < ApplicationController
   end
 
   def create
-  	@exercise = current_user.excercises.new(exercise_params)
+  	@exercise = current_user.exercises.new(exercise_params)
   	if @exercise.save
   		flash[:sucess] = "Exercise has been created"
-  		redirect_to exercises_path(current_user)
+  		redirect_to user_exercises_path(current_user)
   	else
   		flash.now[:danger] = "Exercise has not been created"
   		render :new
