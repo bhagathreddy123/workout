@@ -1,4 +1,4 @@
-require "rails_heper"
+require "rails_helper"
 
 RSpec.feature "Searching for User" do
 	before do
