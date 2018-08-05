@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   	resources :exercises
   end
   root "dashboard#index"
-  resources :dashboard
+  resource :dashboard, only: [:index] do
+  	collection do
+  		post :search, to: 'dashboard#search'
+  	end
+  end
 end
 
